@@ -3,7 +3,10 @@
   "version": "0.0.0",
   "scripts": {
     "serve": "ng serve --proxy-config proxy.conf.json --base-href /",
-    "build": "ng build",
+    "serve:prod": "ng serve --proxy-config proxy.conf.json --prod --base-href /",
+    "build": "ng build --base-href / && npm run publish",
+    "buildprod": "ng build --prod --base-href / && npm run publish",
+    "publish": "gulp copy",
     "ng": "ng",
     "start": "npm run serve",
     "test": "ng test",
@@ -22,6 +25,7 @@
     "@angular/platform-browser": "~9.1.4",
     "@angular/platform-browser-dynamic": "~9.1.4",
     "@angular/router": "~9.1.4",
+    "gulp": "^4.0.2",
     "rxjs": "~6.5.4",
     "tslib": "^1.10.0",
     "zone.js": "~0.10.2"
