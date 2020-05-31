@@ -8,6 +8,15 @@ group = 'com.urban.garden.sensors'
 version = '0.0.1-SNAPSHOT'
 sourceCompatibility = '1.8'
 
+node {
+	version = '12.13.0'
+	distBaseUrl = 'https://nodejs.org/dist'
+	download = true
+	workDir = file("${project.buildDir}/nodejs")
+	npmWorkDir = file("${project.buildDir}/npm-work")
+	nodeModulesDir = file("${project.projectDir}/src/main/typescript")
+}
+
 configurations {
 	compileOnly {
 		extendsFrom annotationProcessor
