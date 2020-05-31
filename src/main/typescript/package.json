@@ -3,8 +3,12 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "buid": "ng build",
-    "start": "ng serve --proxy-config proxy.conf.json",
+    "serve": "ng serve --proxy-config proxy.conf.json --base-href /",
+    "serve:prod": "ng serve --proxy-config proxy.conf.json --prod --base-href /",
+    "build": "ng build --base-href / && npm run publish",
+    "build:prod": "ng build --prod --base-href / && npm run publish",
+    "start": "npm run serve",
+    "publish": "gulp copy",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
