@@ -1,15 +1,16 @@
 package com.urban.garden.sensors.urbangarden.controller;
 
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-@RestController(value="/rest/sensor/")
+@RestController()
 public class SensorController {
 
-    @RequestMapping(value = "test", method = RequestMethod.GET)
-    public void testController(){
-        System.out.println("test");
+    @RequestMapping(value = "/sensor/upload", method = RequestMethod.POST)
+    public void testController(@RequestBody String input){
+        System.out.println(input);
     }
     
 }
