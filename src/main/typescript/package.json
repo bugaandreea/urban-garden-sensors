@@ -8,7 +8,7 @@
     "build": "ng build --base-href / && npm run publish",
     "build:prod": "ng build --prod --base-href / && npm run publish",
     "heroku-postbuild": "ng build --aot --prod",
-    "start": "npm run serve",
+    "start": "node server.js",
     "publish": "gulp copy",
     "test": "ng test",
     "lint": "ng lint",
